@@ -1,5 +1,5 @@
 /**
- * Created by pan on 4/20/2016.
+ * Created by Bitee on 4/20/2016.
  */
 (function () {
   angular

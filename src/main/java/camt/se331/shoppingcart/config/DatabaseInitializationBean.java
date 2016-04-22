@@ -60,6 +60,7 @@ public class DatabaseInitializationBean implements InitializingBean {
         //add user
         Role adminRole = new Role("admin");
         Role userRole = new Role("user");
+        Role ForeignRole = new Role("ForeignUser");
 
         User admin = new User();
         admin.setName("admin");
@@ -77,11 +78,21 @@ public class DatabaseInitializationBean implements InitializingBean {
         user.setPassword("123456");
         Set<Role> roles2=new HashSet<>();
         roles2.add(userRole);
-        user.setRoles(roles2);
+
+
+        User ForeignUser = new User();
+        ForeignUser.setName("ForeignUser");
+        ForeignUser.setUsername("ForeignUser");
+        ForeignUser.setEmail("ForeignUser@yahoo.com");
+        ForeignUser.setPassword("123456");
+        Set<Role> roles3=new HashSet<>();
+        roles3.add(ForeignRole);
         userRepository.save(admin);
         userRepository.save(user);
         admin.setRoles(roles);
         user.setRoles(roles2);
+        ForeignUser.setRoles(roles3);
+        userRepository.save(ForeignUser);
     }
 
 }
