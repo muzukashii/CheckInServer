@@ -40,7 +40,7 @@
        */
       useAuthTokenHeader:true
     };
-    
+
     $httpProvider.interceptors.push(function ($q, $rootScope) {
       return {
         'request' : function (config) {
